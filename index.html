@@ -8,61 +8,99 @@
 <body>
     <h1>Curriculum Vitae</h1>
     <input type="image" src=><!--Añadir foto en el margen derecho-->
-    <form>
-        <h2>Datos personales</h2>
-            <ul>
-                <li>Nombre:<input type="text" required></li>
-                
-                <li>Apellidos:<input type="text" required></li>
-                
-                <li>D.N.I.:<input type="text" maxlength="8" pattern="[0-9]{8}" placeholder="12345678">
-                    <input type="text" maxlength="1" pattern="[A-Z]{1}" placeholder="A (letra en mayúscula)">
-                </li>
-                
-                <li>Dirección:<input type="text" placeholder="C/ Lirio 8">
-                    C.P.: <input type="text" maxlength="5" pattern="[0-9] {5}"placeholder="28522"> <!--¿desplegable con todos los CP? Al elegir la localidad, que aparezca el CP-->
-                    Provincia: <input type="text" placeholder="Madrid"> <!--desplegable con provincias, al elegir el CP, que aparezca la provincia-->
-                    Localidad: <input type="text" placeholder="Rivas Vaciamadrid"><!--desplegable con localidad en función de la provincia elegida, al elegir el CP, que aparezca la localidad-->
-                </li>
-                
-                <li>Fecha de nacimiento: <input type="date"></li>
-                <li>Teléfono de contacto:<input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" placeholder="123-456-789"></li>
-            </ul>
+    <form action="">
+        <section>
+            <h2>Datos personales</h2>
+                <ul>
+                    <li><label for="nombre">Nombre:</label><input id="nombre" type="text" name="datos-personales" required></li>
+
+                    <li><label for="apellidos">Apellidos:</label><input id="apellidos" type="text" name="datos-personales" required></li>
+
+                    <li><label for="DNI">D.N.I.:</label><input id="DNI" type="text" name="datos-personales" maxlength="8" pattern="[0-9]{8}" placeholder="12345678">
+
+                        <label for="letra-DNI"></label><input id="letra-DNI" type="text" name="datos-personales" maxlength="1" pattern="[A-Z]{1}" placeholder="A (letra en mayúscula)">
+                    </li>
+
+                    <li><label for="direccion">Dirección:</label><input id="direccion" type="text" name="datos-personales" placeholder="C/ Lirio 8">
+
+                        <label for="CP">C.P.:</label><input id="CP" type="text" name="datos-personales" maxlength="5" pattern="[0-9] {5}"placeholder="28522"> <!--¿desplegable con todos los CP? Al elegir la localidad, que aparezca el CP-->
+
+                        <label for="provincia">Provincia:</label><input id="provincia" type="text" name="datos-personales" placeholder="Madrid"> <!--desplegable con provincias, al elegir el CP, que aparezca la provincia-->
+
+                        <label for="localidad">Localidad:</label><input id="localidad" type="text" name="datos-personales" placeholder="Rivas Vaciamadrid"><!--desplegable con localidad en función de la provincia elegida, al elegir el CP, que aparezca la localidad-->
+                    </li>
+
+                    <li><label for="fecha-nacimiento">Fecha de nacimiento:</label><input id="fecha-nacimiento" type="date" name="datos personales"></li>
+                    <li><label for="telefono">Teléfono de contacto:</label><input id="telefono" type="tel" name="datos-personales" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" placeholder="600-123-456"></li>
+                </ul>
+        </section>
+
+        <section>
+            <h2>Datos académicos</h2> <!--El usuario tendrá que rellenar campos y darle al "+" si quiere añadir otro nuevo-->
+                <ol reversed>
+                    <li>Técnico superior en Administración y Finanzas (FPII)</li>
+                    <li>Bachillerato de Ciencias sociales</li>
+                    <li><input placeholder="Graduado en Educación secundaria Obligatoria"></li>
+                    <li></li>
+                </ol>
+        </section>
+
+        <section>
+            <h2>Datos profesionales</h2> <!--El usuario tendrá que rellenar campos y darle al "+" si quiere añadir otro nuevo-->
+                <ul><!--Poner un recuadro donde el usuario pueda hacer una breve descripción y vaya añadiendo labores realizadas (dentro de esa empresa) u otro empleo diferente-->
+                    <li>Junio 2012 - octubre 2023: <strong>administrativo contable</strong> en <em>Obras y Vías, S.A.</em>. Empresa dedicada a la gestión de viviendas, locales y naves industriales en alquiler, donde he realiazo, entre otras, labores tales como:</li>
+                        <ul> <!--El usuario tendrá que rellenar campos y darle al "+" si quiere añadir otro nuevo-->
+                            <li>Conciliaciones bancarias</li>
+                            <li>Elaboración de impuestos trimestrales y mensuales</li>
+                            <li></li>
+                        </ul>
+                    <li>Mayo 2012 - junio 2012: <strong>prácticas</strong> en <em>Distribución y Servicios Empresariales Cid, S.L.</em></li>
+                    <li>De <input type="month"> a <input type="month">: <strong><input type="text" placeholder="ej. administrativo contable"></strong></li> en <em><input type="text" placeholder="nombre de la empresa"></em> <!--No funciona negrita ni cursiva-->
+                    <li></li>
+                </ul>
+        </section>
+
+        <section>
+            <h2>Datos de interés</h2> <!--El usuario tendrá que rellenar campos y darle al "+" si quiere añadir otro nuevo-->
+                <ul>
+                    <li><!--Si checkbox es ok, añadir desplegable con los tipos de carnet de conducir, y que se puedan selecionar varios-->
+                        <label for="carnet-conducir">Carnet de conducir</label>
+                        <input type="checkbox" id="carnet-conducir" name="carnet-conducir" value="carnet-conducir">
+                        <select>
+                            <option>Selecciona una o varias opciones</option>
+                            <option>A - Motos y ciclomotores</option>
+                            <option>B - Coches y vehículos ligeros</option>
+                            <option>C - Camiones</option>
+                            <option>D - Autobuses</option>
+                            <option>LCM - Vehículos de movilidad reducida</option>
+                            <option>LVA - Vehículos agrícolas</option>
+                            <option>ADR - Mercancías peligrosas</option>
+                            <option>Permiso internacional</option>
+                        </select>
+                    </li>
+
+                    <li>Aficiones <!--Poder seleccionar varias y tener la opción de añadir una no existente-->
+                        <select>
+                            <option>Selecciona una o varias opciones</option>
+                            <option>Hacer deporte</option>
+                            <option>Leer</option>
+                            <option>Escuchar música</option>
+                            <option>+</option>
+                        </select>
+                    </li>
+
+                    <li>Disponibilidad horaria
+                        <select>
+                            <option>Selecciona una o varias opciones</option>
+                            <option>Mañanas</option>
+                            <option>Tardes</option>
+                            <option>Jornada completa</option>
+                        </select>
+                    </li>
+
+                    <li></li>
+                </ul>
+        </section>
     </form>
-
-    <form>
-        <h2>Datos académicos</h2> <!--El usuario tendrá que rellenar campos y darle al "+" si quiere añadir otro nuevo-->
-            <ol reversed>
-                <li>Técnico superior en Administración y Finanzas (FPII)</li>
-                <li>Bachillerato de Ciencias sociales</li>
-                <li><input placeholder="Graduado en Educación secundaria Obligatoria"></li>
-                <li></li>
-            </ol>
-    </form>
-
-    <section>
-        <h2>Datos profesionales</h2> <!--El usuario tendrá que rellenar campos y darle al "+" si quiere añadir otro nuevo-->
-            <ul><!--Poner un recuadro donde el usuario pueda hacer una breve descripción y vaya añadiendo labores realizadas (dentro de esa empresa) u otro empleo diferente-->
-                <li>Junio 2012 - octubre 2023: <strong>administrativo contable</strong> en <em>Obras y Vías, S.A.</em>. Empresa dedicada a la gestión de viviendas, locales y naves industriales en alquiler, donde he realiazo, entre otras, labores tales como:</li>
-                    <ul> <!--El usuario tendrá que rellenar campos y darle al "+" si quiere añadir otro nuevo-->
-                        <li>Conciliaciones bancarias</li>
-                        <li>Elaboración de impuestos trimestrales y mensuales</li>
-                        <li></li>
-                    </ul>
-                <li>Mayo 2012 - junio 2012: <strong>prácticas</strong> en <em>Distribución y Servicios Empresariales Cid, S.L.</em></li>
-                <li>De <input type="month"> a <input type="month">: <strong><input type="text" placeholder="ej. administrativo contable"></strong></li> en <em><input type="text" placeholder="nombre de la empresa"></em> <!--No funciona negrita ni cursiva-->
-                <li></li>
-            </ul>
-    </section>
-
-    <section>
-        <h2>Datos de interés</h2> <!--El usuario tendrá que rellenar campos y darle al "+" si quiere añadir otro nuevo-->
-            <ul>
-                <li>Carnet de conducir</li><!--Si checkbox es ok, añadir desplegable con los tipos de carnet de conducir, y que se puedan selecionar varios-->
-                <li>Aficiones</li> <!--Desplegable con varias aficiones y tener la opción de añadir una no existente-->
-                <li>Disponibilidad horaria</li><!--Desplegable con tipos de jornada-->
-                <li></li>
-            </ul>
-    </section>
 </body>
 </html>
